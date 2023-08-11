@@ -64,8 +64,7 @@ def predict():
     
     english_tweets = [tweet for i, tweet in enumerate(new_data) if languages == 'en' ]
     arabic_tweets = [tweet for i, tweet in enumerate(new_data) if languages != 'en']
-    print(english_tweets)
-    print(arabic_tweets)
+  
 
     if len(english_tweets) > 0:
         english_new_features = english_tfidf_vectorizer.transform(english_tweets).toarray()
@@ -93,8 +92,7 @@ def predict():
         else:
             arabic_predicted_classes = []
 
-    print(english_predicted_classes)
-    print(arabic_predicted_classes)
+
 
 
 
@@ -115,7 +113,6 @@ def predict_sentiment():
     with torch.no_grad():
         y_pred_sentiment = sentiment_model(X_sentiment).argmax(dim=1)
         predicted_classes_sentiment = y_pred_sentiment.tolist()
-        print(predicted_classes_sentiment)
     return jsonify({'predictions_sentiment': predicted_classes_sentiment})
 
 
@@ -154,7 +151,6 @@ def predict_depression():
     data = request.get_json()
     text = data['text']
     processed_data = [(data) for data in text]
-    print(processed_data)
     # Preprocess input text
     features =tfidf_vectorizer.transform(processed_data)
  
@@ -167,7 +163,6 @@ def predict_depression():
         predicted_label = str(predicted_class)
 
     # Retrieve a random quote/advice from the selected category
-    print(predicted_label)
     selected_quote = random.choice(quote_collections.get(predicted_label, []))
 
     return jsonify({'prediction': predicted_label, 'quote': selected_quote})
