@@ -1,0 +1,55 @@
+.App {
+  padding: 20px;
+}
+
+.comment-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+  gap: 10px;
+  border-radius: 13px;
+  padding: 25px;
+  align-items: center;
+}
+.input-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+button {
+  width: 500px;
+  padding: 10px;
+  background-color: #45cfe1;
+  border-radius: 13px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #12a8dd;
+}
+.textarea {
+  padding: 15px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  border-radius: 13px;
+}
+span {
+  max-width: 500px;
+}
+.status {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 35px;
+}
+.ok-icon {
+  width: 25px;
+}
